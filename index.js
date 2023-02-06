@@ -1,3 +1,6 @@
+//import createCard from "./components/card/card.js";
+import { fetchData } from "./components/card/card.js";
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
@@ -12,3 +15,15 @@ const pagination = document.querySelector('[data-js="pagination"]');
 const maxPage = 1;
 const page = 1;
 const searchQuery = "";
+
+const data = fetchData();
+console.log(data);
+console.log(data.results);
+
+
+/* const dataParsed = JSON.parse(data);
+console.log(dataParsed.results); */
+
+/* const names = data.map((name) => {
+  return name.results.species;
+}); */
