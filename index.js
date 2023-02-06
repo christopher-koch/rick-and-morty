@@ -35,6 +35,3 @@ for (const element in characterData) {
   cardContainer.append(createCharacterCard(characterImage, characterName, characterStatus, characterType, characterOccurrences));
   //cardContainer.innerHTML = "";
 }
-
-
-// createCharacterCard(characterImage, characterName, characterStatus, characterType, characterOccurences);
