@@ -1,27 +1,30 @@
-const fetchUrl = "https://rickandmortyapi.com/api/character";
-
-export async function fetchData() {
-    const response = await fetch(fetchUrl);
-    const data = await response.json();
-    return data.results;
-  }
-  
-/* const characterData = fetchData();
-//console.log(characterData.results[1].status);
-
-  
- export default function createCharacterCard() { 
-    const image = document.createElement("img");
-    const title = document.createElement("h2");
-    const infoContainer = document.createElement("dl");
-    const status = document.createElement("dt");
-    const isAlive = document.createElement("dd");
-    const type = document.createElement("dt");
-    const typeValue = document.createElement("dd");
-    const occurences = document.createElement("dt");
-    const occurencesNumber = document.createElement("dd");
-
-    status.textContent = characterData.results[1].status;
-
-    infoContainer.append(status, isAlive, type, typeValue, occurences, occurencesNumber);
-} */
+export function createCharacterCard(image, name, status, type, occurences) { 
+    const characterImage = image;
+    const characterName = name;
+    const characterStatus = status;
+    const characterType = type;
+    const characterOccurences = occurences;
+        const cardItem = document.createElement("li");
+        cardItem.innerHTML = `<li class="card">
+            <div class="card__image-container">
+            <img
+                class="card__image"
+                src="${characterImage}"
+                alt="Rick Sanchez"
+            />
+            <div class="card__image-gradient"></div>
+            </div>
+            <div class="card__content">
+            <h2 class="card__title">${characterName}</h2>
+            <dl class="card__info">
+                <dt class="card__info-title">Status</dt>
+                <dd class="card__info-description">${characterStatus}</dd>
+                <dt class="card__info-title">Type</dt>
+                <dd class="card__info-description">${characterType}</dd>
+                <dt class="card__info-title">Occurrences</dt>
+                <dd class="card__info-description">${characterOccurences}</dd>
+            </dl>
+            </div>
+        </li>`;
+        return cardItem;
+    }
